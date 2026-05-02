@@ -121,7 +121,7 @@ C:\xampp\htdocs\
 3. Open browser:
 
 ```
-http://localhost/RestaurantManagementSystem
+http://localhost/phpmyadmin/index.php?route=/database/structure&db=restaurant_db
 ```
 
 ---
