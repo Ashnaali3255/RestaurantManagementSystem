@@ -1,9 +1,14 @@
 <?php
-// CORS headers MUST be the very first thing, before any other output
-header("Access-Control-Allow-Origin: *");
+ob_start();
+error_reporting(0);
+
+// CORS - using multiple methods to maximize compatibility
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '*';
+header("Access-Control-Allow-Origin: $origin");
+header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Content-Type: application/json; charset=UTF-8");
 
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
@@ -25,5 +30,7 @@ while ($row = $result->fetch_assoc()) {
     $data[] = $row;
 }
 
+ob_end_clean();
 echo json_encode($data);
+exit();
 ?>
