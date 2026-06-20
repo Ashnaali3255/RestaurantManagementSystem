@@ -1,0 +1,59 @@
+.orders-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.order-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.order-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.order-id {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.order-card p {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.order-card p b {
+  color: var(--text-dark);
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #f1f1f1;
+  color: var(--text-light);
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #fff4e0;
+  color: #b8761a;
+}
+
+.status.preparing {
+  background: #e6f0ff;
+  color: #2563eb;
+}
+
+.status.completed {
+  background: #eafaf1;
+  color: var(--success);
+}

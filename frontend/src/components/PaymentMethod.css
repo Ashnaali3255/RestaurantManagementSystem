@@ -1,0 +1,97 @@
+.payment-method {
+  margin-top: 18px;
+}
+
+.payment-label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+  border-color: var(--accent, var(--primary));
+}
+
+.payment-option.selected {
+  border-color: var(--accent, var(--primary));
+  background: color-mix(in srgb, var(--accent, var(--primary)) 8%, white);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent, var(--primary)) 25%, transparent);
+}
+
+.payment-icon {
+  font-size: 18px;
+}
+
+.wallet-field {
+  margin-top: 14px;
+}
+
+.wallet-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: var(--secondary);
+}
+
+.wallet-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.wallet-field input:focus {
+  border-color: var(--primary);
+}
+
+.bank-details {
+  margin-top: 14px;
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.bank-details p {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.bank-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+}

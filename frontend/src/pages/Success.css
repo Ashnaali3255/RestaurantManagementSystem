@@ -1,0 +1,43 @@
+.success-page {
+  text-align: center;
+  padding-top: 70px;
+  max-width: 480px;
+}
+
+.success-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.success-page h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+.success-page > p {
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.order-id-box {
+  display: inline-block;
+  background: #eafaf1;
+  color: var(--success);
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.payment-confirm {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 32px;
+}
+
+.success-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
