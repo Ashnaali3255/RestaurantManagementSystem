@@ -24,7 +24,7 @@
 
 The **Restaurant Management System** is a full-stack web application designed to manage restaurant operations efficiently. It allows handling of menu items, orders, and basic restaurant workflows using a structured backend and interactive frontend.
 
-This project is built for learning and real-world practice of full-stack development using **PHP, MySQL, HTML, CSS, and JavaScript**.
+This project is built for learning and real-world practice of full-stack development using **PHP, MySQL, HTML, CSS, and JavaScript with React**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -37,6 +37,8 @@ This project is built for learning and real-world practice of full-stack develop
 - HTML5  
 - CSS3  
 - JavaScript  
+- React
+- Router
 - PHP  
 - MySQL (XAMPP)  
 
@@ -78,7 +80,7 @@ https://ashnaali3255.github.io/RestaurantManagementSystem/
 ## 🎥 Video Demo <a name="video-demo"></a>
 
 🎬 Watch Project Demo:  
-https://www.loom.com/share/3fa41c636af4417cb0a0f2042e56e476
+<!-- https://www.loom.com/share/3fa41c636af4417cb0a0f2042e56e476 -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,10 +152,7 @@ http://localhost/phpmyadmin/index.php?route=/database/structure&db=restaurant_db
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-* [ ] Admin dashboard
-* [ ] Online payment system
 * [ ] User login system
-* [ ] Order tracking system
 * [ ] Better UI/UX design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
