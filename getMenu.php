@@ -5,7 +5,10 @@ header("Content-Type: application/json");
 
 $result = $conn->query("SELECT * FROM menu");
 $data = [];
-$base_url = "http://localhost/restuarant-backend/";
+
+// Automatically builds the correct URL whether running on localhost or live server
+$protocol = (!empty($_SERVER['HTTPS'])) ? "https://" : "http://";
+$base_url = $protocol . $_SERVER['HTTP_HOST'] . "/";
 
 while ($row = $result->fetch_assoc()) {
     if (!empty($row['image_url'])) {
