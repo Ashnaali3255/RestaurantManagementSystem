@@ -1,12 +1,6 @@
-// Local development uses XAMPP. Production uses a CORS proxy in front of
-// the InfinityFree backend, because InfinityFree strips CORS headers.
-const RAW_BACKEND = "https://tastybite.infinityfree.me";
-const PROXY = "https://corsproxy.io/?url=";
-
-const isProduction = import.meta.env.PROD;
-
-export const API_BASE = isProduction
-  ? PROXY + encodeURIComponent(RAW_BACKEND)
+// Local development uses XAMPP. Production uses the live AwardSpace backend.
+export const API_BASE = import.meta.env.PROD
+  ? "https://tastybite.awardspace.com"
   : "http://localhost/restuarant-backend";
 
 export const API = {
