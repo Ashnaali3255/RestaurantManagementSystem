@@ -2,7 +2,6 @@
 ob_start();
 error_reporting(0);
 
-// CORS - using multiple methods to maximize compatibility
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '*';
 header("Access-Control-Allow-Origin: $origin");
 header("Access-Control-Allow-Credentials: true");
@@ -20,12 +19,19 @@ include 'db.php';
 $result = $conn->query("SELECT * FROM menu");
 $data = [];
 
-$protocol = (!empty($_SERVER['HTTPS'])) ? "https://" : "http://";
-$base_url = $protocol . $_SERVER['HTTP_HOST'] . "/";
+// Detect environment and build the correct base URL including the folder
+if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+    $base_url = "http://localhost/restuarant-backend/";
+} else {
+    $protocol = (!empty($_SERVER['HTTPS'])) ? "https://" : "http://";
+    $base_url = $protocol . $_SERVER['HTTP_HOST'] . "/";
+}
 
 while ($row = $result->fetch_assoc()) {
     if (!empty($row['image_url'])) {
-        $row['image_url'] = $base_url . $row['image_url'];
+        // Strip any old/incorrect host that might already be saved, keep only the path
+        $path = preg_replace('#^https?://[^/]+/#', '', $row['image_url']);
+        $row['image_url'] = $base_url . $path;
     }
     $data[] = $row;
 }
