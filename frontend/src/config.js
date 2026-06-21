@@ -1,7 +1,13 @@
-// Local development uses XAMPP. Production uses the live backend URL
-// set in Netlify's environment variables (VITE_API_BASE).
-export const API_BASE =
-  import.meta.env.VITE_API_BASE || "http://localhost/restuarant-backend";
+// Local development uses XAMPP. Production uses a CORS proxy in front of
+// the InfinityFree backend, because InfinityFree strips CORS headers.
+const RAW_BACKEND = "https://tastybite.infinityfree.me";
+const PROXY = "https://corsproxy.io/?url=";
+
+const isProduction = import.meta.env.PROD;
+
+export const API_BASE = isProduction
+  ? PROXY + encodeURIComponent(RAW_BACKEND)
+  : "http://localhost/restuarant-backend";
 
 export const API = {
   getMenu: `${API_BASE}/getMenu.php`,
